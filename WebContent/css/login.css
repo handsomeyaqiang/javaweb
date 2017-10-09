@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-image:url(1.jpg);
+	}
+#content{
+	margin-top:30px;
+	margin-left:520px;
+	position:relative;
+	background:#6CC;
+	height:400px;
+	width:350px;		
+	}
+#header{
+	margin-top:80px;
+	margin-left:580px;	
+	}
+.login_bt{
+	background:#39F;
+	margin-top:30px;
+	height:50px;
+	width:150px;
+	margin-left:35px;
+	}
+.register_bt{
+	background:#39F;
+	height:50px;
+	width:150px;
+	margin-left:35px;
+	}
+#username{
+	margin-top:50px;
+	height:30px;	
+	}
+#password{
+	margin-top:20px;
+	height:30px;	
+	}

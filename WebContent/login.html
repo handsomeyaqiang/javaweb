@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>共享网</title>
+<script type="text/javascript">
+function valid()
+{
+	
+	if(document.form.username.value==""||document.form.username.value==null)
+	{
+		alert("用户名不能为空！");
+		document.form.username.focus(); 
+		return false;
+	}else
+	{
+		if(document.form.password.value==""||document.form.password.value==null)
+		{
+			alert("密码不能为空！");
+			document.form.password.focus();
+			return false;
+		}else{
+			var username=document.form.username.value;
+			if(!(/^1(3[0-9]|47|8[0-9]|5([0-3]|[5-9]))\d{8}$/.test(username)))
+			{
+				alert("手机号不正确！");
+				document.form.username.focus();
+				return false;
+			}
+		}	
+	}
+
+
+	
+}
+</script>
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="header">
+<h1>欢迎登陆共享网</h1>
+</div>
+<div id="content">
+<center>
+<form name="form" action="/GongXiangWang/Login" method="post">
+账号：<input type="text" name="username" id="username"/><br/>
+密码：<input type="password" name="password" id="password"/><br/>
+<input type="submit" value="登陆"  onclick="return valid()" class="login_bt"/>
+</form>
+<br/>
+<input type="button" value="注册" class="register_bt" onclick="window.location.href='register.html'"/>
+</center>
+</div>
+</body>
+</html>

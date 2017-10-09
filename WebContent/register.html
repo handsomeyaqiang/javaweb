@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function valid()
+{
+	alert("jin");
+	if(document.form.username.value==""||document.form.username.value==null)
+	{
+		alert("用户名不能为空！");
+		document.form.username.focus(); 
+		return false;
+	}else{
+		if(document.form.repassword.value==""||document.form.repassword.value==null)
+		{
+			alert("密码不能为空！");
+			document.form.repassword.focus();
+			return false;
+		}else{
+		if(document.form.password.value==""||document.form.password.value==null)
+		{
+			alert("密码不能为空！");
+			document.form.password.focus();
+			return false;
+		}else{
+			if(document.form.nickname.value==""||document.form.nickname.value==null)
+			{
+			alert("请输入昵称！");
+			document.form.nickname.focus();
+			return false;
+			}else{
+				if(document.form.password.value!=document.form.repassword.value)
+				{
+					alert("两次输入的密码不一致！");
+					return false;
+				}else{
+						var username=document.form.username.value;
+						if(!(/^1(3[0-9]|47|8[0-9]|5([0-3]|[5-9]))\d{8}$/.test(username)))
+						{
+							alert("手机号不正确！");
+							document.form.username.focus();
+							return false;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+</script>
+<link href="css/register.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="header">
+<h1>欢迎注册共享网</h1>
+</div>
+<div id="content">
+<form name="form" action="/GongXiangWang/Register" method="post">
+<div class="usernamestyle">
+账号：<input type="text" name="username" id="username"/>&nbsp;<label>手机号注册</label><br/>
+</div>
+<div class="passwordstyle">
+密码：<input type="password" name="password" id="password"/><br/>
+</div>
+<div class="repasswordstyle">
+确认密码：<input type="password" name="repassword" id="repassword"/><br/>
+</div>
+<div class="nicknamestyle">
+昵称：<input type="text" name="nickname" id="nickname" /><br/>
+</div>
+<input type="submit" value="注册" class="register_bt" onclick="return valid()"/>
+</form>
+</div>
+</body>
+</html>
